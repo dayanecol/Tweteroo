@@ -8,21 +8,6 @@ app.use(json());
 const users=[];
 const tweets=[];
 
-
-
-// const tweet = {
-// 	username: "bobesponja",
-//   tweet: "eu amo o hub",
-// };
-
-// const tweets = [
-// 	{
-// 		username: "bobesponja",
-// 		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-// 	  tweet: "eu amo o hub"
-// 	}
-// ];
-
 app.post("/sign-up",(req,res)=>{
     const {username,avatar}= req.body;
     users.push({
@@ -45,14 +30,10 @@ app.post("/tweets",(req,res)=>{
 
 app.get("/tweets",(req,res)=>{
     if (tweets.length<=10){
-        res.send(tweets);
+        res.send([...tweets].reverse());
     }
     else{
-        res.send({
-            username:"Day", 
-            avatar:"https://uploads.spiritfanfiction.com/historias/capas/202107/feliz-aniversario-nami-22601723-030720212110.jpg",
-            tweet:"Tweet chumbado", 
-        });
+        res.send([...tweets].reverse().splice(0,10));
     }
 });
 
