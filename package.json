@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev":"nodemon node index.js"
+    "dev": "nodemon node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/dayanecol/Tweteroo#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "chalk": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.18.1"
@@ -27,5 +28,4 @@
   "devDependencies": {
     "nodemon": "^2.0.16"
   }
-
 }
